@@ -17,7 +17,7 @@ provider "aci" {
 
 #Tanent
 resource "aci_tenant" "tenantLocalName" {
-  name = "vanilla"
+    name = "vanilla"
 }
 
 # VRF
