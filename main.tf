@@ -31,7 +31,7 @@ resource "aci_bridge_domain" "bdLocalName" {
     name = "global_bd"
     tenant_dn = aci_tenant.tenantLocalName.id
     relation_fv_rs_ctx = aci_vrf.vrfLocalName.id
-
+}
 resource "aci_bridge_domain" "bdAppLocalName" {
     for_each = var.app_bd_set
     name = each.value
