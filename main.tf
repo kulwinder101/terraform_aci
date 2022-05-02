@@ -47,7 +47,8 @@ resource "aci_application_profile" "apLocalName" {
 }
 #web epg
 resource "aci_application_epg" "webEpgLocalName" {
-    for_each = toset{["web1.epg","web2_epg"]}
+   # for_each = toset{["web1.epg","web2_epg"]}
+    for_each = var.web_epg_set
     name = each.value
     application_profile_dn = aci_application_profile.apLocalName.id
     relation_fv_rs_bd = aci_bridge_domain.bdLocalName.id
